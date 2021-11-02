@@ -43,8 +43,7 @@ public class PlayerBehavior : MonoBehaviour
     {
         if(isDead && !hasForce)
         {
-            if (transform.position.x > 0) rb.AddForce(forcePush * transform.right);
-            else rb.AddForce(forcePush * -transform.right);
+            rb.AddForce(forcePush * transform.right);
             hasForce = true;
         }
     }
