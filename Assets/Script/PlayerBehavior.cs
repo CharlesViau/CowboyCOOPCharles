@@ -12,6 +12,7 @@ public class PlayerBehavior : MonoBehaviour
     public bool ControlLock { get; private set; } = false;
     [SerializeField] private AudioSource gunSFX;
     [SerializeField] private AudioSource winSFX;
+    [SerializeField] private CoinBehavior coin;
     private Vector3 initialTransform;
     private Quaternion initialRotaation;
     Rigidbody rb;
@@ -57,6 +58,7 @@ public class PlayerBehavior : MonoBehaviour
     public void WinRound()
     {
         RoundsWin++;
+        coin.Show(RoundsWin);
     }
     public void Reset()
     {
@@ -82,5 +84,6 @@ public class PlayerBehavior : MonoBehaviour
     public void ResetScore()
     {
         RoundsWin = 0;
+        coin.Reset();
     }
 }
